@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Atomic+Age&family=Rubik:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Fallout :: Game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="game-page">
+      <img src="./images/survivor.png" alt="male sole survivor" />
+      <button>
+        <img src="./images/enemies/raider.png" alt="death claw" />
+      </button>
+      <div id="character-health" class="health-block">
+        <p>HP</p>
+        <div class="indicator"><div class="status-line"></div></div>
+        <p id="character-health-range">75/100</p>
+        <p class="damage">-30</p>
+      </div>
+      <div id="enemy-health" class="health-block">
+        <p>Raider</p>
+        <div class="indicator"><div class="status-line"></div></div>
+        <p class="damage">-30</p>
+      </div>
+      <div id="notification">
+        <h4>Welcome, Ray</h4>
+        <p>You are on the level 1. To attack enemy click on his icon</p>
+        <button class="secondary-btn">dos</button>
+      </div>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
