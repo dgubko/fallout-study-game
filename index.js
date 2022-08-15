@@ -1,7 +1,3 @@
-// imports
-
-var Location = require("./Location");
-
 // This line of code will declare a variable and assign it to a value stored from previous page
 var characterName = localStorage.getItem("character");
 
@@ -12,3 +8,8 @@ var factoryLocation = new Location("Wilson Atomatoys factory", "factory", {
   type: "assaultron",
 });
 var badlandLocation = new Location("Dunes", "badland", { type: "raider" });
+streetLocation.announceLocation();
+
+streetLocation.changeImages();
+
+streetLocation.announceEnemy();

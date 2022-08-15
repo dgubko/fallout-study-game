@@ -8,6 +8,7 @@ class Location {
 
   announceLocation() {
     var locationBlock = document.getElementById("location-msg"); //get HTML element with id atribute location-msg as a js object.
+    console.log(locationBlock);
     locationBlock.innerText = `You are at the ${this.name}`; //changes inner text in HTML element, this.name refers to object property name.
   }
   announceEnemy() {
@@ -17,6 +18,13 @@ class Location {
   leaveLocation() {
     this.isVisited = true;
   }
+  changeImages() {
+    var imageBlock = document.getElementById("game-page");
+    imageBlock.style.background = `url(./images/locs/${this.type}.jpeg)`;
+    var enemyPicture = document.getElementById("enemy-picture");
+    enemyPicture.setAttribute(
+      "src",
+      `./images/enemies/${this.enemy.type.replace(" ", "-")}.png`
+    );
+  }
 }
-// Exporting class Location from this file and it can be used in others.
-module.exports = Location;
