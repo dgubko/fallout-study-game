@@ -265,7 +265,6 @@ h1 {
 /* *** */
 
 #game-page {
-  background: url(./images/locs/street.jpeg);
   background-size: 100%;
   overflow: hidden;
   display: flex;
@@ -319,6 +318,7 @@ h1 {
   left: 40px;
   color: #11fc5c;
   text-shadow: 0 0 4px #0b8732;
+  display: none;
 }
 
 #character-health > * {
@@ -342,6 +342,7 @@ h1 {
   top: 40px;
   color: #fd5f38;
   text-shadow: 0 2px 5px #651c0a;
+  display: none;
 }
 
 .indicator {
@@ -421,4 +422,8 @@ h1 {
 
 #notification h4 {
   text-transform: uppercase;
+}
+
+#enemy-button {
+  display: none;
 }

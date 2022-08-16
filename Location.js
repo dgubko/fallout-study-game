@@ -27,4 +27,9 @@ class Location {
       `./images/enemies/${this.enemy.type.replace(" ", "-")}.png`
     );
   }
+  loadLocation() {
+    this.changeImages();
+    this.announceLocation();
+    this.announceEnemy();
+  }
 }

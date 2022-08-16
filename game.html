@@ -16,7 +16,7 @@
   <body>
     <div id="game-page">
       <img src="./images/survivor.png" alt="male sole survivor" />
-      <button disabled>
+      <button id="enemy-button" disabled>
         <img
           id="enemy-picture"
           src="./images/enemies/raider.png"
@@ -35,7 +35,7 @@
         <p class="damage">-30</p>
       </div>
       <div id="notification">
-        <h4>Welcome</h4>
+        <h4 id="name-block">Welcome</h4>
         <p id="level-msg"></p>
         <p id="location-msg"></p>
         <p id="enemy-msg"></p>
@@ -45,6 +45,7 @@
     </div>
     <script src="./Location.js"></script>
     <script src="./Enemy.js"></script>
+    <script src="./PlayerCharacter.js"></script>
     <script src="./index.js"></script>
   </body>
 </html>
