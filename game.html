@@ -16,8 +16,12 @@
   <body>
     <div id="game-page">
       <img src="./images/survivor.png" alt="male sole survivor" />
-      <button>
-        <img src="./images/enemies/raider.png" alt="death claw" />
+      <button disabled>
+        <img
+          id="enemy-picture"
+          src="./images/enemies/raider.png"
+          alt="death claw"
+        />
       </button>
       <div id="character-health" class="health-block">
         <p>HP</p>
@@ -31,11 +35,16 @@
         <p class="damage">-30</p>
       </div>
       <div id="notification">
-        <h4>Welcome, Ray</h4>
-        <p>You are on the level 1. To attack enemy click on his icon</p>
-        <button class="secondary-btn">dos</button>
+        <h4>Welcome</h4>
+        <p id="level-msg"></p>
+        <p id="location-msg"></p>
+        <p id="enemy-msg"></p>
+        <p>To attack enemy click on his icon</p>
+        <button class="secondary-btn">start</button>
       </div>
     </div>
+    <script src="./Location.js"></script>
+    <script src="./Enemy.js"></script>
     <script src="./index.js"></script>
   </body>
 </html>
