@@ -27,9 +27,21 @@ class PlayerCharacter {
       this.isDead = true;
     }
   }
+
   welcome() {
     document.getElementById(
       "name-block"
     ).innerText = `${this.name}, welcome to level ${this.level}!`;
+  }
+
+  displayHealth() {
+    var characterHealthBlock = document.getElementById("character-health");
+    characterHealthBlock.style.display = "flex";
+    console.log(this.health, this.baseHealth);
+    var percent = (this.health / this.baseHealth) * 100;
+    document.getElementById("status-line-current").style.width = `${percent}%`;
+    document.getElementById(
+      "character-health-range"
+    ).innerText = `${this.health} / ${this.baseHealth}`;
   }
 }

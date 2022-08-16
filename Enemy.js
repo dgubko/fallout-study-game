@@ -34,4 +34,12 @@ class Enemy {
       this.isDead = true;
     }
   }
+
+  displayHealth() {
+    var enemyHealthBlock = document.getElementById("enemy-health");
+    enemyHealthBlock.style.display = "flex";
+    enemyHealthBlock.querySelector("p:first-child").innerText = this.name;
+    var percent = (this.health / this.fullHealth) * 100;
+    document.getElementById("enemy-current-health").style.width = `${percent}%`;
+  }
 }

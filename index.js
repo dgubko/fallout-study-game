@@ -19,3 +19,15 @@ function loadLevel1() {
 
 // Game functionality
 loadLevel1();
+
+// Click on start
+
+document.getElementById("start-button").addEventListener("click", function () {
+  document.getElementById("notification").style.display = "none";
+  document.getElementById("character-health").style.display = "flex";
+  document.getElementById("enemy-button").style.display = "block";
+  document.getElementById("enemy-button").setAttribute("disabled", false);
+  deathClaw.exploreEnemy();
+  deathClaw.displayHealth();
+  playerCharacter.displayHealth();
+});
