@@ -381,7 +381,7 @@ h1 {
   font-size: 40px;
 }
 
-#notification {
+.notification {
   background-color: rgba(0, 0, 0, 0.5);
   position: absolute;
   top: calc(50% - 250px);
@@ -400,8 +400,12 @@ h1 {
   text-align: center;
 }
 
-#notification::before,
-#notification::after {
+#end-msg {
+  display: none;
+}
+
+.notification::before,
+.notification::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -409,17 +413,17 @@ h1 {
   border: 2px solid #fff;
 }
 
-#notification::before {
+.notification::before {
   top: 0;
   border-bottom: none;
 }
 
-#notification::after {
+.notification::after {
   bottom: 0;
   border-top: none;
 }
 
-#notification h4 {
+.notification h4 {
   text-transform: uppercase;
 }
 

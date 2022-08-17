@@ -8,7 +8,6 @@ class Location {
 
   announceLocation() {
     var locationBlock = document.getElementById("location-msg"); //get HTML element with id atribute location-msg as a js object.
-    console.log(locationBlock);
     locationBlock.innerText = `You are at the ${this.name}`; //changes inner text in HTML element, this.name refers to object property name.
   }
   announceEnemy() {

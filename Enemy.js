@@ -33,13 +33,14 @@ class Enemy {
     if (this.health < 1) {
       this.isDead = true;
     }
+    this.displayHealth();
   }
 
   displayHealth() {
     var enemyHealthBlock = document.getElementById("enemy-health");
     enemyHealthBlock.style.display = "flex";
     enemyHealthBlock.querySelector("p:first-child").innerText = this.name;
-    var percent = (this.health / this.fullHealth) * 100;
+    var percent = this.health > 0 ? (this.health / this.fullHealth) * 100 : 0;
     document.getElementById("enemy-current-health").style.width = `${percent}%`;
   }
 }

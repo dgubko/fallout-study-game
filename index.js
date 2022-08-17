@@ -23,11 +23,19 @@ loadLevel1();
 // Click on start
 
 document.getElementById("start-button").addEventListener("click", function () {
-  document.getElementById("notification").style.display = "none";
-  document.getElementById("character-health").style.display = "flex";
+  document.getElementById("start-msg").style.display = "none";
   document.getElementById("enemy-button").style.display = "block";
-  document.getElementById("enemy-button").setAttribute("disabled", false);
-  deathClaw.exploreEnemy();
+  document.getElementById("enemy-button").removeAttribute("disabled");
+  deathClaw.exploreEnemy(playerCharacter.level);
   deathClaw.displayHealth();
   playerCharacter.displayHealth();
+});
+
+document.getElementById("enemy-button").addEventListener("click", function () {
+  var characterDamage = playerCharacter.damage();
+  document.getElementById("character-damage-number").style.display = "block";
+  document.getElementById(
+    "character-damage-number"
+  ).innerText = `-${characterDamage}`;
+  deathClaw.getDamage(characterDamage);
 });
