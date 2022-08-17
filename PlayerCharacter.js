@@ -10,9 +10,10 @@ class PlayerCharacter {
 
   upLevel() {
     this.level = this.level + 1;
-    this.health = this.health * 1.2;
-    this.damageRange[0] = this.damageRange[0] * 1.15;
-    this.damageRange[1] = this.damageRange[1] * 1.15;
+    this.baseHealth = Math.floor(this.baseHealth * 1.2);
+    this.health = this.baseHealth;
+    this.damageRange[0] = Math.floor(this.damageRange[0] * 1.15);
+    this.damageRange[1] = Math.floor(this.damageRange[1] * 1.15);
   }
   damage() {
     return Math.floor(
@@ -26,6 +27,7 @@ class PlayerCharacter {
     if (this.health < 1) {
       this.isDead = true;
     }
+    this.displayHealth();
   }
 
   welcome() {

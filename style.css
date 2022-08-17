@@ -265,7 +265,7 @@ h1 {
 /* *** */
 
 #game-page {
-  background-size: 100%;
+  background-size: cover !important;
   overflow: hidden;
   display: flex;
   justify-content: space-between;
