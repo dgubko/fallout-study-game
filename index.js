@@ -1,23 +1,41 @@
 // This line of code will declare a variable and assign it to a value stored from previous page
 var characterName = localStorage.getItem("character");
-
-// CODE BELOW
-
-var raider = new Enemy("Zig", "raider");
+var playerCharacter = new PlayerCharacter(characterName);
 var ghoul = new Enemy("Mr.Parker", "ghoul");
-var assaultron = new Enemy("Assaultron", "assaultron");
-var deathClaw = new Enemy("Legendary Death Claw", "death claw");
+var raider = new Enemy("DEMO", "raider");
+var deathClaw = new Enemy("Legendary death claw", "death claw");
+var assaultron = new Enemy("Assaultrone", "assaultrone");
+var badlands = new Location("Dunes", "badlands", raider);
+var factory = new Location("Wilson atomatoys factory", "factory", assaultron);
+var forest = new Location("Forest", "forest", ghoul);
+var street = new Location("Concord", "street", deathClaw);
 
-var forestLocation = new Location("South Forest", "forest", ghoul);
-var streetLocation = new Location("Concord", "street", deathClaw);
-var factoryLocation = new Location(
-  "Wilson Atomatoys factory",
-  "factory",
-  assaultron
-);
-var badlandLocation = new Location("Dunes", "badland", raider);
-streetLocation.announceLocation();
+// Utility functions
+function loadLevel1() {
+  // on 1st level location is street.
+  street.loadLocation();
+  playerCharacter.welcome();
+}
 
-streetLocation.changeImages();
+// Game functionality
+loadLevel1();
 
-streetLocation.announceEnemy();
+// Click on start
+
+document.getElementById("start-button").addEventListener("click", function () {
+  document.getElementById("start-msg").style.display = "none";
+  document.getElementById("enemy-button").style.display = "block";
+  document.getElementById("enemy-button").removeAttribute("disabled");
+  deathClaw.exploreEnemy(playerCharacter.level);
+  deathClaw.displayHealth();
+  playerCharacter.displayHealth();
+});
+
+document.getElementById("enemy-button").addEventListener("click", function () {
+  var characterDamage = playerCharacter.damage();
+  document.getElementById("character-damage-number").style.display = "block";
+  document.getElementById(
+    "character-damage-number"
+  ).innerText = `-${characterDamage}`;
+  deathClaw.getDamage(characterDamage);
+});

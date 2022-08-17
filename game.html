@@ -16,7 +16,7 @@
   <body>
     <div id="game-page">
       <img src="./images/survivor.png" alt="male sole survivor" />
-      <button disabled>
+      <button id="enemy-button" disabled>
         <img
           id="enemy-picture"
           src="./images/enemies/raider.png"
@@ -25,26 +25,35 @@
       </button>
       <div id="character-health" class="health-block">
         <p>HP</p>
-        <div class="indicator"><div class="status-line"></div></div>
-        <p id="character-health-range">75/100</p>
-        <p class="damage">-30</p>
+        <div class="indicator">
+          <div id="status-line-current" class="status-line"></div>
+        </div>
+        <p id="character-health-range"></p>
+        <p id="enemy-damage-number" class="damage">-30</p>
       </div>
       <div id="enemy-health" class="health-block">
-        <p>Raider</p>
-        <div class="indicator"><div class="status-line"></div></div>
-        <p class="damage">-30</p>
+        <p></p>
+        <div class="indicator">
+          <div id="enemy-current-health" class="status-line"></div>
+        </div>
+        <p id="character-damage-number" class="damage">-30</p>
       </div>
-      <div id="notification">
-        <h4>Welcome</h4>
+      <div id="start-msg" class="notification">
+        <h4 id="name-block">Welcome</h4>
         <p id="level-msg"></p>
         <p id="location-msg"></p>
         <p id="enemy-msg"></p>
         <p>To attack enemy click on his icon</p>
-        <button class="secondary-btn">start</button>
+        <button class="secondary-btn" id="start-button">start</button>
+      </div>
+      <div id="end-msg" class="notification">
+        <h4 id="enemy-death-msg"></h4>
+        <button id="end-level-btn" class="secondary">Go to next level</button>
       </div>
     </div>
     <script src="./Location.js"></script>
     <script src="./Enemy.js"></script>
+    <script src="./PlayerCharacter.js"></script>
     <script src="./index.js"></script>
   </body>
 </html>
